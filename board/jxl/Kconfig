@@ -1,0 +1,9 @@
+if TARGET_JXL
+
+config SYS_BOARD
+	default "jxl"
+
+config SYS_CONFIG_NAME
+	default "jxl"
+
+endif

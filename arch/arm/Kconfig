@@ -2103,6 +2103,19 @@ config ARCH_OCTEONTX2
 	select SYS_PCI_64BIT if PCI
 	imply OF_HAS_PRIOR_STAGE
 
+config TARGET_JXL
+	bool "Support JXL minimal AArch64 SPL learning board"
+	select ARM64
+	select DM
+	select DM_SERIAL
+	select OF_CONTROL
+	select PL01X_SERIAL
+	help
+	  Minimal synthetic AArch64 board emulated by QEMU's jxl machine
+	  (hw/arm/jxl/). SRAM at 0x0 holds SPL, NOR flash at 0x04000000
+	  holds U-Boot proper, DRAM at 0x40000000. Used for learning
+	  U-Boot's SPL → proper boot chain.
+
 config TARGET_THUNDERX_88XX
 	bool "Support ThunderX 88xx"
 	select ARM64
@@ -2395,6 +2408,7 @@ source "board/broadcom/bcmns3/Kconfig"
 source "board/cavium/thunderx/Kconfig"
 source "board/eets/pdu001/Kconfig"
 source "board/emulation/qemu-arm/Kconfig"
+source "board/jxl/Kconfig"
 source "board/emulation/qemu-sbsa/Kconfig"
 source "board/freescale/ls2080aqds/Kconfig"
 source "board/freescale/ls2080ardb/Kconfig"

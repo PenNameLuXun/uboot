@@ -1,0 +1,7 @@
+JXL BOARD
+M:	JXL <jxl@example.org>
+S:	Maintained
+F:	board/jxl/
+F:	include/configs/jxl.h
+F:	configs/jxl_defconfig
+F:	arch/arm/dts/jxl.dts
