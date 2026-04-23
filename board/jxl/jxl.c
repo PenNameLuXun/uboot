@@ -27,10 +27,10 @@ static struct mm_region jxl_mem_map[] = {
 		.attrs = PTE_BLOCK_MEMTYPE(MT_NORMAL) |
 			 PTE_BLOCK_INNER_SHARE,
 	}, {
-		/* Peripherals: PL011 UART lives in this window */
-		.virt = 0x09000000UL,
-		.phys = 0x09000000UL,
-		.size = 0x01000000UL,
+		/* Peripherals: GIC, MMCI and PL011 live in this window */
+		.virt = 0x08000000UL,
+		.phys = 0x08000000UL,
+		.size = 0x03000000UL,
 		.attrs = PTE_BLOCK_MEMTYPE(MT_DEVICE_NGNRNE) |
 			 PTE_BLOCK_NON_SHARE |
 			 PTE_BLOCK_PXN | PTE_BLOCK_UXN,

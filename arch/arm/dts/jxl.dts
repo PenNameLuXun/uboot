@@ -50,5 +50,14 @@
 			clocks = <&apb_pclk>, <&apb_pclk>;
 			clock-names = "uartclk", "apb_pclk";
 		};
+
+		mmci0: mmci@a000000 {
+			compatible = "arm,pl18x", "arm,primecell";
+			reg = <0x0 0x0a000000 0x0 0x1000>;
+			bus-width = <4>;
+			max-frequency = <24000000>;
+			clocks = <&apb_pclk>, <&apb_pclk>;
+			clock-names = "mclk", "apb_pclk";
+		};
 	};
 };
