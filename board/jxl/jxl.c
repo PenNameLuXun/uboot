@@ -5,6 +5,7 @@
 
 #include <cpu_func.h>
 #include <init.h>
+#include <spl.h>
 #include <asm/armv8/mmu.h>
 #include <asm/global_data.h>
 #include <asm/io.h>
@@ -122,3 +123,10 @@ void reset_cpu(void)
 	while (1)
 		asm volatile ("wfi");
 }
+
+#ifdef CONFIG_SPL_BUILD
+u32 spl_boot_device(void)
+{
+	return BOOT_DEVICE_NOR;
+}
+#endif

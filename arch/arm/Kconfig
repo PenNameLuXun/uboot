@@ -2110,6 +2110,7 @@ config TARGET_JXL
 	select DM_SERIAL
 	select OF_CONTROL
 	select PL01X_SERIAL
+	select SUPPORT_SPL
 	help
 	  Minimal synthetic AArch64 board emulated by QEMU's jxl machine
 	  (hw/arm/jxl/). SRAM at 0x0 holds SPL, NOR flash at 0x04000000
