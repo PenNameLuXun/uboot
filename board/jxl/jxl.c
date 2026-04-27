@@ -24,7 +24,7 @@ static struct mm_region jxl_mem_map[] = {
 		/* DRAM */
 		.virt = 0x40000000UL,
 		.phys = 0x40000000UL,
-		.size = 0x08000000UL,
+		.size = 0x7f000000UL,
 		.attrs = PTE_BLOCK_MEMTYPE(MT_NORMAL) |
 			 PTE_BLOCK_INNER_SHARE,
 	}, {
