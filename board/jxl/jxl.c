@@ -129,4 +129,17 @@ u32 spl_boot_device(void)
 {
 	return BOOT_DEVICE_NOR;
 }
+
+/*
+ * Place the FIT load buffer at 0x42000000 (kernel scratch in DRAM) instead
+ * of the default CONFIG_TEXT_BASE = 0x40080000. With CONFIG_TEXT_BASE the
+ * FIT and U-Boot proper share the same address range, so once SPL loads
+ * U-Boot proper it overwrites the in-memory FIT and subsequent
+ * /images/<loadable> lookups (and /fit-images recording) read garbage.
+ * That broke BL32 entry hand-off to BL31 in the optee chain.
+ */
+void *board_spl_fit_buffer_addr(ulong fit_size, int sectors, int bl_len)
+{
+	return (void *)0x42000000UL;
+}
 #endif
